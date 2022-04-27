@@ -1,0 +1,174 @@
+
+/* 노토산스*/
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+.notosanskr * { 
+ font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* Black Han */
+@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans:400');
+@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap&subset=korean');
+
+/* S-core */
+@font-face {
+    font-family: 'S-CoreDream-9Black';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* S-core */
+@font-face {
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* S-core */
+@font-face {
+    font-family: 'S-CoreDream-8Heavy';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-8Heavy.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* S-core */
+@font-face {
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* cafe24 */
+@font-face {
+    font-family: 'Cafe24Ssurround';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 잉크립퀴드체 */
+@font-face {
+    font-family: 'InkLipquid';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/InkLipquid.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 즐거운이야기체 */
+@font-face {
+    font-family: 'OTEnjoystoriesBA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OTEnjoystoriesBA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 배달의민족 주아체 */
+@font-face {
+    font-family: 'BMJUA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 여기어때 잘난체 */
+@font-face {
+    font-family: 'yg-jalnan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 레시피코리아체 */
+@font-face {
+    font-family: 'Recipekorea';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Recipekorea.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #f6d78d;
+    color: #000600;
+    overflow: hidden;
+    font-family: "Noto Sans KR";
+    font-weight: bold;
+}
+
+#survey{
+    display: flex;
+    justify-content: center;
+    /* vw,vh 전체 보여주는 화면에서의  할당량*/
+    /*%는 내 부모의 넓이의 %이다.*/
+    width: 100vw;
+    height: 100vh;
+    margin-top: 50px;
+}
+
+/* test클래스를 가지고 있는 하나의 설문지가 하나의 높이를 전부 사용하게 한 다음, 다음을 눌렀을 때 그 다음 페이지가 나오게 하기 위해서 */
+.test {
+    max-width: 600px;
+    height: 100vh;
+}
+
+.question_container {
+    display: flex;
+    /* 문제들 수직으로 배치 */
+    flex-direction: column;
+    /* 문제들 중앙 정렬 */
+    align-items: center;
+    font-size: 30px;
+    line-height: 1.3;
+    padding-bottom: 30px;
+}
+
+.question_container .number {
+    padding-bottom: 30px;
+}
+
+.question_container .question {
+    font-family: "yg-jalnan";
+}
+
+.answer {
+    font-size: 17px;
+    line-height: 1.3;
+    padding-bottom: 30px;
+}
+
+.answer div {
+    padding-bottom: 15px;
+}
+
+.answer input {
+    cursor: pointer;
+}
+
+.btn_wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.btn_sort{
+    justify-content: space-between;
+}
+
+button, .submit_btn {
+    font-family: "Recipekorea";
+    font-size: 20px;
+    width: 100px;
+    height: 40px;
+    padding: 5px;
+    border-style: none;
+    border-radius: 10px;
+    background-color: #539ea4;
+    color: #fff6ff;
+    cursor: pointer;
+}
+
+button:hover, .submit_btn:hover{
+    color: #539ea4;
+    background-color: #fff6ff;
+}

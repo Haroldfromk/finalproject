@@ -1,0 +1,277 @@
+
+/* 노토산스*/
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+.notosanskr * { 
+ font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* Black Han */
+@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans:400');
+@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap&subset=korean');
+
+/* S-core */
+@font-face {
+    font-family: 'S-CoreDream-9Black';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* S-core */
+@font-face {
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* S-core */
+@font-face {
+    font-family: 'S-CoreDream-8Heavy';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-8Heavy.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* S-core */
+@font-face {
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* cafe24 */
+@font-face {
+    font-family: 'Cafe24Ssurround';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 잉크립퀴드체 */
+@font-face {
+    font-family: 'InkLipquid';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/InkLipquid.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 즐거운이야기체 */
+@font-face {
+    font-family: 'OTEnjoystoriesBA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OTEnjoystoriesBA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 배달의민족 주아체 */
+@font-face {
+    font-family: 'BMJUA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 여기어때 잘난체 */
+@font-face {
+    font-family: 'yg-jalnan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 레시피코리아체 */
+@font-face {
+    font-family: 'Recipekorea';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Recipekorea.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* 움직임 적용 */
+/* translateY => y축의 위치만 이동시킬 꺼다 */
+@keyframes rotate {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-20%);
+    }
+    50% {
+        transform: translateY(-40%);
+    }
+    75% {
+        transform: translateY(-60%);
+    }
+    100% {
+        transform: translateY(-80%);
+    }
+}
+
+/* 움직임 적용 */
+.type_list {
+    animation: rotate 7s infinite;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+/* ctrl + shift + i */
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #f6d78d;
+    /* 글자색 */
+    color: rgb(11, 11, 11);
+    font-family: "Noto Sans KR";
+}
+
+/* 모든 콘텐츠를 감싼 <section id="main_contents></seciton>를 전체 화면으로 설정해 주기 위해 width와 height를 모두 100%로 지정합니다. */
+
+#main_contents{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+}
+
+#main_contents .wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+}
+
+.title {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.main_title {
+    font-family: "Cafe24Ssurround";
+    font-size: 50px;
+    padding-bottom: 15px;
+}
+
+.sub_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #539EA4;
+}
+
+/* 움직이는 부분 */
+.intro {
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.intro h1 {
+    font-size: 30px;
+    padding-bottom: 15px;
+}
+
+.type {
+    font-size: 25px;
+    line-height: 3em;
+    height: 3em;
+    overflow: hidden;
+}
+/* line-height: 3em; 컨텐츠겹침 */
+
+.button {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.button button{
+    width: 300px;
+    height: 50px;
+    padding: 5px;
+    border-style: none;
+    border-radius: 10px;
+
+    font-family: "NEXON Lv1 Gothic OTF"; 
+    font-size: 20px;
+    font-weight: bold;
+
+    background-color: #fff6ff;
+    color: #539ea4;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+
+.button button:hover{
+    /* text-decoration: underline; */
+    color: #539ea4;
+    background-color: #fff6ff;
+}
+
+
+
+
+.result_data {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* line-height 을 1.5로 설정하여 행간을 띄우고, 아래 로고와의 여백을 50px만큼 줌 */
+.result_data .data_wrap {
+    width: 270px;
+    padding: 15px;
+    border-top: 3px solid #000600;
+    border-bottom: 3px solid #000600;
+
+    line-height: 1.5;
+    margin-bottom: 50px;
+}
+
+/* '참여자 수'를 중앙 정렬하고 폰트 사이즈를 20px로 설정, 글자 굵기는 bold로 설정 */
+/* 안쪽 여백을 상, 하에만 각각 20px과 30px로 설정하기 위해 padding: 20px 0 30px 로 입력 */
+.result_data h3 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px 0 30px;   
+}
+
+
+/* 유형별 참여자 수는 '참여자 수'보다 좀 작게  표현하기 위해 폰트 사이즈를 15px로  */
+/* 안쪽 아래 여백을 위의 여백과 동일하게 20px로 설정 */
+.result_data li {
+    font-size: 15px;
+    padding-bottom: 20px;
+}
+
+
+/* 이제 메인페이지의 마지막 작업인 로고. 이전과 마찬가지로 우선 배치  */
+/* justify-content 를 center로 설정하여 중앙 정렬을 시켜주고 아래 여백은 50px만큼 줌 */
+.AnimaR {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+
+/* 로고의 크기를 조절하기 위해 img 태그를 감싸고 있는 a 태그의 width를 100px로 설정하고,  */
+/* img 의 width와 height는 각각 100%, auto로 설정합니다. */
+.AnimaR a {
+    width: 100px;
+}
+
+.AnimaR img{
+    width: 100%;
+    height: auto;
+}
+
+
+
+
+

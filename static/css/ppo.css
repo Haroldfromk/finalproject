@@ -1,0 +1,79 @@
+/* Front info section */
+#section-info {
+  background-image: url("#");
+  background-repeat: repeat;
+}
+
+.section-content {
+  padding: 4rem 0;
+}
+
+.divider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.divider:before, .divider:after {
+  content: '';
+  height: 0.15rem;
+  background: #666;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.divider:before {
+  margin: 0 0.45rem 0 0;
+}
+
+.divider:after {
+  margin: 0 0 0 0.45rem;
+}
+
+#shadow-box {
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+#frontInfos .card,
+#frontInfos img {
+  border-radius: 1rem;
+}
+
+#frontInfos .socials {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+#frontInfos .socials .card {
+  border: none;
+  border-radius: 3rem;
+}
+
+#frontInfos .socials img {
+  border-radius: 3rem;
+}
+
+#frontInfos .infos {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+#frontInfos .infos .card.card-body {
+  background-color: #f3f3f3;
+  min-height: 20rem;
+}
+
+#frontInfos .infos .card.card-body p {
+  font-size: 1.1rem;
+}
+/*# sourceMappingURL=ppo.css.map */

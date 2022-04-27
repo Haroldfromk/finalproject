@@ -1,0 +1,187 @@
+
+/* 노토산스*/
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+.notosanskr * { 
+ font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* Black Han */
+@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans:400');
+@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap&subset=korean');
+
+/* S-core */
+@font-face {
+    font-family: 'S-CoreDream-9Black';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* S-core */
+@font-face {
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* S-core */
+@font-face {
+    font-family: 'S-CoreDream-8Heavy';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-8Heavy.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* S-core */
+@font-face {
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* cafe24 */
+@font-face {
+    font-family: 'Cafe24Ssurround';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 잉크립퀴드체 */
+@font-face {
+    font-family: 'InkLipquid';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/InkLipquid.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 즐거운이야기체 */
+@font-face {
+    font-family: 'OTEnjoystoriesBA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OTEnjoystoriesBA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 배달의민족 주아체 */
+@font-face {
+    font-family: 'BMJUA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 여기어때 잘난체 */
+@font-face {
+    font-family: 'yg-jalnan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 레시피코리아체 */
+@font-face {
+    font-family: 'Recipekorea';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Recipekorea.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #f6d78d;
+    /* 글자색 */
+    color: rgb(11, 11, 11);
+    font-family: "Noto Sans KR";
+}
+
+
+/*  */
+/* intro 요소 배치, text-align 속성을 center로 설정하여 중앙 정렬시키고, padding-bottom 아래 번튼과 간격 주기 */
+.intro {
+    text-align: center;
+    padding-bottom: 40px;
+    font-family: 'yg-jalnan';
+    /* color: #539EA4;
+    background-color: #000600; */
+    width: 270px;
+    padding: 15px;
+    border-top: 3px solid #000600;
+    border-bottom: 3px solid #000600;
+    line-height: 1.5;
+    margin-bottom: 50px;
+}
+
+.button{
+    align-items: center;
+}
+
+/* 나와 어울리는 친구는?! */
+.intro h2 {
+    font-size: 25px;
+    padding-bottom: 15px;
+}
+
+/* 강아지 list */
+.type {
+    font-size: 20px;
+    line-height: 3em;
+    height: 3em;
+    overflow: hidden;
+    font-family: 'BMJUA';
+}
+
+/* ------------------------------------------------- */
+/* @keyframes통해 애니메이션 중간 상태 기술 */
+/* translateY => y축의 위치만 이동시킬 꺼다 */
+@keyframes rotate {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-20%);
+    }
+    50% {
+        transform: translateY(-40%);
+    }
+    75% {
+        transform: translateY(-60%);
+    }
+    100% {
+        transform: translateY(-80%);
+    }
+}
+
+
+
+/* 애니메이션 적용 animation속성 */
+.type_list {
+    animation: rotate 7s infinite;
+}
+
+
+/* ------------------------------------------------- */
+
+
+
+/*  */
+
+
+/*  */
+
+
+/*  */
+
+
+/*  */
+
+
+/*  */
+
+
+/*  */
+
+

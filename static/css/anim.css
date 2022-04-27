@@ -1,0 +1,277 @@
+
+/* 리셋시작 */
+/* body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+} */
+/* 리셋 CSS 끝 */
+
+
+.cont_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.cont_viewer {
+    overflow: hidden;
+    position:relative;
+    width: 60vw;
+    height: 500px;
+}
+
+/* 배경 스타일 시작 */
+.cont_bg {
+    position:relative;
+    width: 100%;
+    height: 500px;
+    background: skyblue;
+}
+.bg_sky{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height: 70%;
+    background:skyblue;
+}
+.bg_ground{
+    position: absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height: 20%;
+    background:saddlebrown
+}
+.bg_forest_far {
+    position:absolute;
+    top:30px;
+    left:0;
+    width:100%;
+    height:400px;
+    background:url(/static/img/tree.png);
+    background-size: contain;
+    transition: 0.1s
+}
+.bg_forest_near {
+    position:absolute;
+    bottom:15px;
+    left:0;
+    width:100%;
+    height:250px;
+    background:url(/static/img/tree2.png);
+    background-size: contain;
+    transition: 0.1s
+}
+/* 배경 스타일 끝 */
+
+/* 강아지 스타일 시작 */
+.obj_cat{
+    display:block;
+    position:absolute;
+    bottom:15px;
+    left:50%;
+    margin-left:-40px;
+    width:80px;
+    height:109px;
+    background-image:url(/static/img/dog3.png);
+    background-size: 240px 109px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    transform:rotate(0);
+}
+/* 걷는 애니메이션 */
+@keyframes ani_walk{
+    100%{
+        background-position: -240px 0;
+    }
+}
+/* img_walk 클래스에 걷는 애니매이션을 등록 */
+.img_walk{
+    animation: ani_walk 0.3s steps(3) infinite;
+}
+/* 강아지 스타일 끝 */
+
+/* 강아지 스타일 시작 */
+.obj_friends{
+    display:block;
+    position:absolute;
+    bottom:0;
+    width:80px;
+    height:109px;
+    background-size: 80px 109px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    animation: ani_friends 0.2s alternate infinite;
+}
+.obj_friend1{
+    left:200px;
+    background-image:url(/static/img/dog00.png);
+    animation: flow linear 10s infinite;
+}
+.obj_friend2{
+    left:380px;
+    background-image:url(/static/img/samo.png);
+}
+.obj_friend3{
+    left:560px;
+    background-image:url(/static/img/hound.png);
+    animation: flow linear 20s infinite;
+}
+/*  만났을 때의 애니메이션을 등록하는 클래스 */
+.obj_contect{
+    animation: ani_contect 3s forwards;
+}
+/* 친구들의 기본 동작 */
+@keyframes ani_friends{
+    100%{
+        transform:translateY(3px);
+    }
+}
+/* 친구들을 만났을 때 동작 */
+@keyframes ani_contect{
+    100%{
+        transform:translateY(-1000px);
+    }
+}
+/* 강아지 스타일 끝 */
+
+
+/* 태양, 사람 시작 */
+.col-md-9 .sky {	/* 상단 영역에 구름과 태양을 배치, 하단에 텍스트를 배치 */
+	position: relative; 
+	width: 100%; 
+	height: 100%;
+}
+
+
+.col-md-9 .sky .sun {
+	position: relative; 
+	top: -150px; 
+	left: 50%; 
+	margin-left: -100px; 
+	transform-origin: center 500px; /* 태양의 중심축을 아래쪽으로 500만큼 이동 */
+	animation: sun linear 20s infinite;
+}
+
+
+.col-md-9 .sky .cloud1 {
+	position: relative;
+	top: -30px; 
+	left: 10%; 
+	animation: flow linear 10s infinite;
+}
+
+
+.col-md-9 .sky .cloud2 {
+	position: relative; 
+	top: 20px; 
+	left: 0%; 	
+	animation: flow linear 20s infinite;
+}
+
+
+.col-md-9 .town .night { 
+	position: relative; 
+	bottom: 0px;
+	left: 40px;
+}
+
+
+.col-md-9 .town .day { 
+	position: relative; 
+	bottom: 0px; 
+	left: 40px;
+	animation: day linear 20s infinite;
+}
+
+
+.col-md-9 .town .circle {
+	position: relative; 
+	bottom: 104px;
+	left: 30%; 
+	top: -1px;
+	margin-left: -165px; 
+	opacity: 0.7;
+	animation: rotation linear 20s infinite; 	
+}
+
+
+.col-md-9 .people {	
+	width: 100%; 
+	height: 100%; 
+	position: relative; 
+	top: -55px;
+	left: 0px;
+	animation: day linear 20s infinite;	
+}
+
+
+.col-md-9 .people .man {
+	position: relative;
+	left: 0%;
+	bottom: 0px;
+	animation: flow linear 7s infinite;
+}
+
+
+.col-md-9 .people .family {
+	position: relative;
+	left: 0%;
+	bottom: 0px;
+	animation: flow linear 20s infinite;
+}
+
+
+@keyframes rotation {
+	0% {transform: rotate(0deg);}
+	100% {transform: rotate(360deg);}
+}
+
+@keyframes sky {
+	0% {background-color: #F2DC99;}
+	25% {background-color: #A7C6D9;}
+	50% {background-color: #BF8E9B;}
+	75% {background-color: #D9B7B0;}
+	100% {background-color: #D9D3B8;}
+}
+
+@keyframes sun {
+	0% {opacity:0; transform: rotate(-90deg);}
+	25% {opacity:1; transform: rotate(-30deg);}
+	50% {opacity:1; transform: rotate(30deg);}
+	75% {opacity:0; transform: rotate(90deg);}
+	100% {opacity:0; transform: rotate(-90deg);}
+}
+
+@keyframes day {
+	0% {opacity: 0;}
+	25% {opacity: 1;}
+	50% {opacity: 1;}
+	75% {opacity: 0;}
+	100% {opacity: 0;}
+}
+
+@keyframes flow {
+	0% { left: 0%; opacity: 0;}
+	10% { opacity: 1; }
+	80% { opacity: 1; }
+	100% { left: 90%; opacity: 0;}
+}
+

@@ -1,0 +1,88 @@
+// 변수로 색 설정
+$brand-green: #0e2d16;
+$brand-light-beige: #aba097;
+$brand-yellowish: #b1a285;
+$brand-animar: #c0c0c0;
+$brand-animarr: #cccccc;
+$brand-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12),
+  0 8px 10px -5px rgba(0, 0, 0, 0.2);
+
+
+/* Front info section */
+#section-info {
+    background-image: url('#');
+    background-repeat: repeat;
+}
+
+.section-content {
+    padding: 4rem 0;
+}
+
+.divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+
+    &:before,
+    &:after {
+        content: '';
+        height: 0.15rem;
+        background: #666;
+
+        // 선(양옆으로 구분선 줌)
+        flex: 1;
+    }
+
+    // 회전하는 동그라미 사이에 틈 만들어줌
+    &:before {
+        margin: 0 0.45rem 0 0;
+    }
+
+    &:after {
+        margin: 0 0 0 0.45rem;
+    }
+}
+
+// dogimg에서 그림자 효과
+#shadow-box {
+    transition: 0.5s ease-in-out;
+  }
+
+
+//map부분
+#frontInfos {
+    .card,
+    img {
+      border-radius: 1rem;
+    }
+  
+    .socials {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+  
+      .card {
+        border: none;
+        border-radius: 3rem;
+      }
+  
+      img {
+        border-radius: 3rem;
+      }
+    }
+  
+    .infos {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+  
+      .card.card-body {
+        background-color: lighten($brand-animar, 20%);
+        min-height: 20rem;
+  
+        p {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }

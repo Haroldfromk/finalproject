@@ -1,0 +1,153 @@
+/*  */
+
+
+
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* 리셋 CSS 끝 */
+
+
+.cont_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.cont_viewer {
+    overflow: hidden;
+    position:relative;
+    width: 60vw;
+    height: 500px;
+}
+
+/* 배경 스타일 시작 */
+.cont_bg {
+    position:relative;
+    width: 1800px;
+    height: 500px;
+    background: skyblue;
+}
+.bg_sky{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height: 70%;
+    background:skyblue;
+}
+.bg_ground{
+    position: absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height: 20%;
+    background:saddlebrown
+}
+.bg_forest_far {
+    position:absolute;
+    top:30px;
+    left:0;
+    width:100%;
+    height:400px;
+    background:url(../img/bg_tree_far.png);
+    background-size: contain;
+    transition: 0.1s
+}
+.bg_forest_near {
+    position:absolute;
+    bottom:15px;
+    left:0;
+    width:100%;
+    height:250px;
+    background:url(../img/bg_tree_near.png);
+    background-size: contain;
+    transition: 0.1s
+}
+/* 배경 스타일 끝 */
+
+/* 고양이 스타일 시작 */
+.obj_cat{
+    display:block;
+    position:absolute;
+    bottom:15px;
+    left:50%;
+    margin-left:-40px;
+    width:80px;
+    height:109px;
+    background-image:url(../img/cat_sprite.png);
+    background-size: 240px 109px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    transform:rotate(0);
+}
+/* 걷는 애니메이션 */
+@keyframes ani_walk{
+    100%{
+        background-position: -240px 0;
+    }
+}
+/* img_walk 클래스에 걷는 애니매이션을 등록합니다 */
+.img_walk{
+    animation: ani_walk 0.3s steps(3) infinite;
+}
+/* 고양이 스타일 끝 */
+
+/* 친구 동물들 스타일 시작 */
+.obj_friends{
+    display:block;
+    position:absolute;
+    bottom:0;
+    width:80px;
+    height:109px;
+    background-size: 80px 109px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    animation: ani_friends 0.2s alternate infinite;
+}
+.obj_friend1{
+    left:800px;
+    background-image:url(../img/dog.png);
+}
+.obj_friend2{
+    left:1200px;
+    background-image:url(../img/rabbit.png);
+}
+.obj_friend3{
+    left:1700px;
+    background-image:url(../img/sheep.png);
+}
+/* 냥이와 친구들이 만났을 때의 애니메이션을 등록하는 클래스입니다 */
+.obj_contect{
+    animation: ani_contect 3s forwards;
+}
+/* 친구들의 기본 동작 */
+@keyframes ani_friends{
+    100%{
+        transform:translateY(3px);
+    }
+}
+/* 냥이가 친구들을 만났을 때의 동작 */
+@keyframes ani_contect{
+    100%{
+        transform:translateY(-1000px);
+    }
+}
+/* 친구 동물들 스타일 끝 */

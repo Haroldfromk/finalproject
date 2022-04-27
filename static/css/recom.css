@@ -1,0 +1,243 @@
+
+/* 노토산스*/
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+.notosanskr * { 
+ font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* Black Han */
+@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans:400');
+@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap&subset=korean');
+
+/* S-core */
+@font-face {
+    font-family: 'S-CoreDream-9Black';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* S-core */
+@font-face {
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* S-core */
+@font-face {
+    font-family: 'S-CoreDream-8Heavy';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-8Heavy.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* S-core */
+@font-face {
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* cafe24 */
+@font-face {
+    font-family: 'Cafe24Ssurround';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 잉크립퀴드체 */
+@font-face {
+    font-family: 'InkLipquid';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/InkLipquid.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 즐거운이야기체 */
+@font-face {
+    font-family: 'OTEnjoystoriesBA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OTEnjoystoriesBA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 배달의민족 주아체 */
+@font-face {
+    font-family: 'BMJUA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 여기어때 잘난체 */
+@font-face {
+    font-family: 'yg-jalnan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 레시피코리아체 */
+@font-face {
+    font-family: 'Recipekorea';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Recipekorea.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #FAF1BE;
+    color: #000600;
+    font-family: "Noto Sans KR";
+}
+
+button {
+    font-family: "Recipekorea";
+    font-size: 20px;
+    width: 400px;
+    height: 50px;
+    padding: 5px;
+    border-style: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #fff6ff;
+    color: #000600;
+}
+
+button:hover {
+    text-decoration: underline;
+}
+
+#main_contents{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+}
+
+#main_contents .wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    padding-bottom: 50px;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.result h1 {
+    font-size: 50px;
+    font-family: "yg-jalnan";
+}
+
+.result h3 {
+    font-size: 17px;
+    padding-bottom: 15px;
+}
+
+.result_img {
+    width: 300px;
+    height: 324px;
+}
+
+.result_img img {
+    width: 100%;
+    height: 100%;
+}
+
+.result_explains {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 50px;
+    line-height: 1.5;
+}
+
+.result_explains .explain{
+    width: 400px;
+    margin-bottom: 30px;
+}
+
+.result_explains .title {
+    font-family: "Cafe24Ssurround";
+    font-size: 20px;
+    text-align: center;
+    border-top: 3px solid #BE9E7D;
+    border-bottom: 3px solid #BE9E7D;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.result_explains ul {
+    padding: 0 20px;
+    list-style-type: disc;
+}
+
+.result_explains li {
+    padding-bottom: 15px;
+}
+
+.share {
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+    border-bottom: 3px solid #BE9E7D;
+}
+
+.share button {
+    margin-bottom: 30px;
+}
+
+
+.buttons {
+    padding-bottom: 50px;
+}
+
+.buttons h3 {
+    padding-bottom: 20px;
+}
+
+.buttons button {
+    margin-bottom: 30px;
+}
+
+.color {
+    background-color: #539ea4;
+    color: #fff6ff;
+}
+
+.AnimaR {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.AnimaRweniv a {
+    width: 100px;
+}
+
+.AnimaR img{
+    width: 100%;
+    height: auto;
+}
+
+.AnimaR p {
+    padding-top: 20px;
+    font-size: 10px;
+    text-align: center;
+    line-height: 1.5;
+}

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css'/>
+    <!-- @media screen and (max-width: 1074px)는 1074px보다 작아지면 아래를 실행시키겠다 이말. 반응형 웹 만들 때 유용함! -->
+    <!-- 
+    @media screen and (max-width: 1074px){
+      .map iframe{
+         width: 300px;
+         height:300px;
+        }
+      }
+    -->
+
+    <style>
+
+       #map {
+        height: 400px;
+        width: 400px;
+       }
+
+      .inner-star::before{color: #FF9600;}
+      .outer-star{position: relative;display: inline-block;color: #CCCCCC;}
+      .inner-star{position: absolute;left: 0;top: 0;width: 0%;overflow: hidden;white-space: nowrap;}
+      .outer-star::before, 
+      .inner-star::before {content: '\f005 \f005 \f005 \f005 \f005';font-family: 'Font Awesome 5 free';font-weight: 900;}
+      </style>
+
+<link rel="stylesheet" href="/static/css/ppo.css">
+<link rel="stylesheet" href="/static/css/ppo2.css">
+
+  </head>
+  <body>
+    {% include 'navbar.html' %}
+
+    <section id="frontInfos">
+      <div class="section-content">
+        <div class="container-xxl">
+          <h3 class="text-center mb-4">내주변 반려견 병원, 약국 위치 찾기</h3>
+          
+
+          <div class="row justify-content-center infos">
+            <div class="col-md-4 mb-3">
+              <div class="card card-body shadow-sm p-4 text-center box-bg">
+                <i class="fas fa-map-marker-alt fa-4x"></i>
+                <h4 class="mb-0">How to find</h4>
+                <hr class="hr-black">
+                <div class="fw-light">
+                       
+                  
+                    <div id="map" style="width: 22.7rem;"></div>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="card card-body shadow-sm p-4 text-center box-bg">
+                <i class="fas fa-clock fa-4x"></i>
+                <h4 class="mb-0">Info</h4>
+                <hr class="hr-black">
+                <div class="fw-light">
+                  
+                  <p>스크롤을 통해 <br/> 확대와 축소가 가능합니다. </p>
+                  <br/>
+                  <p>강아지 캐릭터를 클릭하면 <br>주소와 별점 리뷰를 확인할 수 있습니다.</p>
+                  <br/>
+                  <p><img src="/static/img/hospital2.png" class="rounded mx-auto d-block"  alt="병원" style="width: 2rem;" >동물병원정보 확인</p>
+                  <br/>
+                  <p><img src="/static/img/pharmacy2.png" class="rounded mx-auto d-block"  alt="병원" style="width: 2rem;" >동물약국정보 확인</p>
+
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ------------------------------------------------------ -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiqII8IBNOYI_q6tudKSpS8_wj3SRHVIc&callback=initMap"></script>
+    <script>
+      var totalRating = 5;
+      var ratings;
+      const imagePath = "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m";
+      var markers = [];
+      var map
+      var table
+      var ratingPercentage
+      var ratingRounded
+      var star
+      var numberRating
+      
+      function initMap(){  
+              
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 18,
+          center: { lat:  35.23485433009151, lng: 129.07976395257016 }
+        });
+        
+        infoWindow = new google.maps.InfoWindow();
+
+        const locationButton = document.createElement("button");
+      
+        locationButton.textContent = "현재위치";
+        locationButton.classList.add("custom-map-control-button");
+        map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+        locationButton.addEventListener("click", () => {
+          // Try HTML5 geolocation.
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+              (position) => {
+                const pos = {
+                  lat: position.coords.latitude,
+                  lng: position.coords.longitude,
+                };
+                const image = "/static/img/loc.png"
+                var marker = new google.maps.Marker({
+                  position:  {lat: position.coords.latitude, lng: position.coords.longitude},
+                  map: map,
+                  icon : image
+                });
+                marker.setMap(map);
+                map.setCenter(pos);
+              },
+              () => {
+                handleLocationError(true, infoWindow, map.getCenter());
+              }
+            );
+          } else {
+            // Browser doesn't support Geolocation
+            handleLocationError(false, infoWindow, map.getCenter());
+          }
+         
+        });
+      
+        hospitalmarker()
+        pharmacymarker()
+
+        google.maps.event.addListener(map, 'zoom_changed', function() {
+
+          markerUpdate()
+    
+        });
+
+        google.maps.event.addListener(map, 'dragend', function(evt){
+
+          markerUpdate()
+    
+        });
+      }
+
+      function rateIt(){
+        for (rating in ratings) {
+          ratingPercentage = ratings[rating] / totalRating * 100;
+          ratingRounded = Math.round(ratingPercentage / 10) * 10 + '%';
+          star = document.querySelector(`.${rating} .inner-star`);
+          numberRating = document.querySelector(`.${rating} .numberRating`);
+          star.style.width = ratingRounded;
+
+          }
+        }
+
+    function markerUpdate(){ 
+      var mapBounds = map.getBounds(); 
+      var marker, position; 
+        for(var i=0; i<markers.length; i++){ 
+          marker = markers[i] 
+          position = marker.getPosition(); 
+          if(mapBounds.contains(position)){ 
+            markers[i].setMap(map); 
+          }else{ 
+            markers[i].setMap(null); 
+          }  
+        }
+      }    
+
+      
+
+    function hospitalmarker(){
+        var content, loc;
+        bounds = new google.maps.LatLngBounds();
+        const image = "/static/img/hospital2.png"
+            {% for hospital in hospitals %}
+            var marker = new google.maps.Marker({
+              position:  {lat: {{hospital.lat}}, lng: {{hospital.long}}},
+              map: map,
+              title : "{{hospital.name}}",
+              icon : image
+            });
+            
+            table = document.querySelector('.RatingStar');
+            ratings = {RatingScore: 4} ;
+
+            marker['infowindow'] = new google.maps.InfoWindow({
+                content : '<div class="customoverlay">' + '병원명:<br>{{hospital.name}}<br> 주소:<br> {{hospital.address}}'
+                          +'</div>'+'<br>'
+                          + '별점'+"<div class='RatingStar'>" + "<div class='RatingScore'>" 
+                          + "<div class='outer-star'>"+"<div class='inner-star'>"
+                          + '</div>'+'</div>' +'</div>' +'</div>'+'<br>'
+                          + '리뷰'+ '<div class="review">'+ '{{hospital.review}}' +'</div>'
+            })
+    
+            google.maps.event.addListener(marker, 'click', function() {
+                 this['infowindow'].open(map, this);
+                 setTimeout(function() { rateIt() }, 1);
+            });
+            marker.setMap(map);
+            markers.push(marker);
+            {% endfor %}
+        }
+
+    function pharmacymarker(){
+        const image = "/static/img/pharmacy2.png"
+            {% for pharmacy in pharmacies %}
+            var marker = new google.maps.Marker({
+              position:  {lat: {{pharmacy.lat}}, lng: {{pharmacy.long}}},
+              map: map,
+              title : "{{pharmacy.name}}",
+              icon : image
+            });
+            
+            table = document.querySelector('.RatingStar');
+            ratings = {RatingScore: 3.5} ;
+
+            marker['infowindow'] = new google.maps.InfoWindow({
+                content : '<div class="customoverlay">' + '약국명:<br>{{pharmacy.name}}<br> 주소:<br> {{pharmacy.address}}'
+                          +'</div>'+'<br>'
+                          + '별점'+"<div class='RatingStar'>" + "<div class='RatingScore'>" 
+                          + "<div class='outer-star'>"+"<div class='inner-star'>"
+                          + '</div>'+'</div>' +'</div>' +'</div>'+'<br>'
+                          + '리뷰'+ '<div class="review">'+ '{{pharmacy.review}}' +'</div>'               
+            })
+            
+            google.maps.event.addListener(marker, 'click', function() {
+                this['infowindow'].open(map, this);
+                setTimeout(function() { rateIt() }, 1);
+            });
+            
+            
+            marker.setMap(map);
+            markers.push(marker);
+            {% endfor %}
+        }
+
+    function deleteMarkers(){
+      for(i=0; i< markers.length; i++){
+        markers[i].setMap(null)
+      }
+        markers = [];
+    }
+    
+    </script>
+  {% include 'footer.html' %}
+  </body>
+</html>
